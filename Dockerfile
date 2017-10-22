@@ -31,8 +31,8 @@ RUN set -x \
     && make -j$(nproc) \
     && cp bin/xmr-stak-cpu /usr/local/bin/ \
     && sed -r \
-        -e 's/^("pool_address" : ).*,/\1"xmr.mypool.online:3333",/' \
-        -e 's/^("wallet_address" : ).*,/\1"49TfoHGd6apXxNQTSHrMBq891vH6JiHmZHbz5Vx36nLRbz6WgcJunTtgcxnoG6snKFeGhAJB5LjyAEnvhBgCs5MtEgML3LU",/' \
+        -e 's/^("pool_address" : ).*,/\1"stratum+tcp://europe.cryptonight-hub.miningpoolhub.com:20580",/' \
+        -e 's/^("wallet_address" : ).*,/\1"463tWEBn5XZJSxLU6uLQnQ2iY9xuNcDbjLSjkn3XAXHCbLrTTErJrBWYgHJQyrCwkNgYvyV3z8zctJLPCZy24jvb3NiTcTJ.6bedbc1cf0ac43d4825e2a40947ea21eda5d94cc1d34499fb726689797fb692b.docker",/' \
         -e 's/^("pool_password" : ).*,/\1"docker-xmr-stak-cpu:x",/' \
         ../config.txt > /usr/local/etc/config.txt \
     \
